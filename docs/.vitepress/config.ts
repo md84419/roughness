@@ -103,8 +103,8 @@ export default defineConfig({
           {
             text: 'Proposals',
             items: [
-              // { text: 'Tabs', link: '../proposals/tabs' },
               { text: 'Table', link: '/proposals/table' },
+              { text: 'Tabs', link: '/proposals/tabs' },
             ],
           },
         ],
@@ -121,6 +121,13 @@ export default defineConfig({
       provider: 'local',
     },
     outline: [2, 3],
+  },
+  vue: {
+    template: {
+      compilerOptions: {
+        isCustomElement: tag => tag.startsWith('wired-')
+      }
+    }
   },
   vite: {
     css: {
